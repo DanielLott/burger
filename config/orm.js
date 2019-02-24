@@ -70,14 +70,14 @@ var orm = {
       cb(result);
     });
   },
-  // An example of objColVals would be {name: panther, sleepy: true}
-  update: function(table, objColVals, condition, cb) {
+  // An example of eatenProperty_P2 would be {eaten: true}
+  update: function(table, eatenProperty_P2, idEqualsVal_P2, cb) {
     var queryString = "UPDATE " + table;
 
     queryString += " SET ";
-    queryString += objToSql(objColVals);
+    queryString += objToSql(eatenProperty_P2);
     queryString += " WHERE ";
-    queryString += condition;
+    queryString += idEqualsVal_P2;
 
     console.log(queryString);
     connection.query(queryString, function(err, result) {
@@ -88,19 +88,19 @@ var orm = {
       cb(result);
     });
   },
-  delete: function(table, condition, cb) {
-    var queryString = "DELETE FROM " + table;
-    queryString += " WHERE ";
-    queryString += condition;
+//   delete: function(table, condition, cb) {
+//     var queryString = "DELETE FROM " + table;
+//     queryString += " WHERE ";
+//     queryString += condition;
 
-    connection.query(queryString, function(err, result) {
-      if (err) {
-        throw err;
-      }
+//     connection.query(queryString, function(err, result) {
+//       if (err) {
+//         throw err;
+//       }
 
-      cb(result);
-    });
-  }
+//       cb(result);
+//     });
+//   }
 };
 
 // Export the orm object for the model (cat.js).
