@@ -20,7 +20,7 @@ router.post("/api/burgers", function (req, res) {
     ormFunction.create([
         "name", "eaten"
     ], [
-            req.body.name, req.body.eaten
+            req.body.name, false
         ], function (result) {
             // Send back the ID of the new burger
             res.json({ id: result.insertId });
@@ -30,7 +30,7 @@ router.post("/api/burgers", function (req, res) {
 router.put("/api/burgers/:id", function (req, res) {
     var idEqualsVal = "id = " + req.params.id;
 
-    console.log("Burger: ", idEquals_al);
+    console.log("Burger #" + req.params.id, "has been eaten!");
 
     ormFunction.update({
         eaten: req.body.eaten
