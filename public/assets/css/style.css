@@ -1,19 +1,22 @@
-li {
-  padding: 5px;
-  margin: 5px;
-  background: #faebd7;
+body {
+  background-color: #FFCA65;
 }
 
-.label {
-  font-weight: bold;
+
+h1 {
+    color: red;
+
 }
 
-.create-update-form {
-  padding: 5px;
-  margin: 5px;
-  background: aqua;
+#ready, #eaten {
+    width: 300px;
 }
 
-.form-group {
-  margin-bottom: 5px;
-}
+
+
+
+/* img, h1, h2, form, p {
+      max-width: 500px;
+  margin: auto;
+  padding: 10px;
+} */

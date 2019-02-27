@@ -1,31 +1,36 @@
-<h1>Burgers!</h1>
+<div class="container">
+    <img src="/assets/images/burger.png" alt="picture of burger from Burger King" width="200" class="rounded mx-auto d-block">
+    <h1 class="text-center">Burger Time!</h1>
 
-<h2>Ready to Eat!</h2>
 
-<ul>
-    {{#each burgers}}
-    {{#unless eaten}}
-    {{> burgers/ready-block}}
-    {{/unless}}
-    {{/each}}
-</ul>
-
-<h2>Eaten. :&lpar;</h2>
-
-<ul>
-    {{#each burgers}}
-    {{#if eaten}}
-    {{> burgers/eaten-block}}
-    {{/if}}
-    {{/each}}
-</ul>
-
-<h2>Add a Burger</h2>
-<form class="create-form">
-
-    <div class="form-group">
-        <textarea type="text" id="nameEntry" name="name"></textarea>
-        <label for="nameEntry">Enter a burger you want to eat, then click the "Submit" button.</label>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm text-right">
+                {{#each burgers}}
+                    {{#unless eaten}}
+                    {{> burgers/ready-block}}
+                    {{/unless}}
+                {{/each}}
+            </div>
+            <div class="col-sm">
+                    {{#each burgers}}
+        {{#if eaten}}
+        {{> burgers/eaten-block}}
+        {{/if}}
+        {{/each}}
+            </div>
+        </div>
     </div>
-    <button type="submit">Submit</button>
-</form>
+
+
+    <form class="create-form text-center">
+
+        <div class="form-group">
+            <textarea type="text" id="nameEntry" class="w-auto" name="name"></textarea>
+            <br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <br>
+            <label for="nameEntry">Enter a burger you want to eat, then click the "Submit" button.</label>
+        </div>
+    </form>
+</div>
