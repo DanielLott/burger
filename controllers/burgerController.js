@@ -8,6 +8,7 @@ var ormFunction = require("../models/ormModels.js");
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function (req, res) {
     ormFunction.all(function (data) {
+        console.log(data);
         var hbsObject = {
             burgers: data
         };
